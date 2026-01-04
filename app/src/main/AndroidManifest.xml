@@ -3,29 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".FindCareApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/findcare_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/findcare_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindCare">
-        <activity
-            android:name=".activities.SignupActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.LoginActivity"
-            android:exported="false" />
+        
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.FindCare">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.LoginActivity" android:exported="false" />
+        <activity android:name=".activities.SignupActivity" android:exported="false" />
+        <activity android:name=".activities.OnboardingActivity" android:exported="false" />
+        <activity android:name=".activities.HomeActivity" android:exported="false" />
+        <activity android:name=".activities.DoctorListActivity" android:exported="false" />
+        <activity android:name=".activities.DoctorDetailActivity" android:exported="false" />
+        <activity android:name=".activities.SuccessActivity" android:exported="false" />
+
     </application>
 
 </manifest>

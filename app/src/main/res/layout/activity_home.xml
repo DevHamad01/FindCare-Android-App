@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Navbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="32dp">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Find Care"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColorPrimary"/>
+                
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:tint="@color/black"/>
+        </LinearLayout>
+
+        <!-- Search Inputs -->
+        <EditText
+            android:id="@+id/etCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Condition, Procedure, Doctor..."
+            android:background="@drawable/bg_input_capsule" 
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/gray_dark"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/etLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select a Location"
+            android:background="@drawable/bg_input_capsule"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_mapmode"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/gray_dark"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp"/>
+            
+
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Categories Grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="4">
+            
+            <!-- Category 1 -->
+            <LinearLayout
+                android:id="@+id/catDental"
+                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+                
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dental"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+            <!-- Category 2 -->
+             <LinearLayout
+                android:id="@+id/catCardiology"
+                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_compass"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cardiology"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+            <!-- Category 3 -->
+             <LinearLayout
+                android:id="@+id/catLungs"
+                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lungs"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+             
+             <!-- Category 4 -->
+             <LinearLayout
+                android:id="@+id/catBrain"
+                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_lock_power_off"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brain"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+                
+             <!-- Category 5 -->
+             <LinearLayout
+                android:id="@+id/catEar"
+                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/stat_notify_call_mute"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ear"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+             <!-- Category 6 -->
+             <LinearLayout
+                android:id="@+id/catOptometry"
+                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Optometry"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+            <!-- Category 7: Dermatology -->
+            <LinearLayout
+                android:id="@+id/catDermatology"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skin"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+            <!-- Category 8: Pediatrics -->
+            <LinearLayout
+                android:id="@+id/catPediatrics"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kids"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+            <!-- Category 9: Orthopedics -->
+            <LinearLayout
+                android:id="@+id/catOrthopedics"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_agenda"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bones"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+            <!-- Category 10: General -->
+            <LinearLayout
+                android:id="@+id/catGeneral"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="20dp"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:background="@drawable/bg_circle_gray"
+                    android:tint="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#F5F5F7"> <!-- Light Gray Background -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Top Row: Rating and Price -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+            
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★ 4.5"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#DAA520"
+                android:background="@drawable/bg_option_card"
+                android:backgroundTint="@color/white"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$90/hr"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:background="@drawable/bg_option_card"
+                android:backgroundTint="@color/white"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <!-- Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Adam Max"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorPrimary"/>
+                
+                <TextView
+                     android:id="@+id/tvSpecialty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Psychologist"
+                    android:textSize="14sp"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_marginBottom="8dp"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4 Slots Available"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorPrimary"/>
+            </LinearLayout>
+
+             <!-- Image -->
+             <ImageView
+                android:id="@+id/ivDoctor"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/doctor"
+                android:scaleType="centerCrop"
+                 android:background="@drawable/bg_input_rounded"/> 
+        </LinearLayout>
+
+        
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

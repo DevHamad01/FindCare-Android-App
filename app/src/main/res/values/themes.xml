@@ -2,7 +2,19 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FindCare" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/gray_medium</item>
+        <item name="colorSecondaryVariant">@color/gray_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="Theme.FindCare" parent="Base.Theme.FindCare" />

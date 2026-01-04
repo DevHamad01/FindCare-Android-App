@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/colorBackground">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="@drawable/bg_option_card"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Find Doctor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorPrimary" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <!-- Search Input -->
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Psychologist - Anxiety"
+        android:background="@drawable/bg_input_capsule"
+        android:padding="16dp"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="12dp"
+        android:drawableTint="@color/gray_dark"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Results Header & Filters -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="287 Doctors found"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/textColorPrimary" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"/>
+
+        <LinearLayout
+            android:id="@+id/layoutEmptyState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/illustration_nodata"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No data found!"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColorPrimary"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/colorBackground">
+
+    <!-- Header with Back Button (Visual only for now) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_option_card"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Answer Questions"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorPrimary" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" /> <!-- Spacer -->
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Question 1 -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What type of care are you looking for?"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_marginBottom="32dp" />
+
+                <!-- Options Container -->
+                <LinearLayout
+                    android:id="@+id/cardQ1Opt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_option_card"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/ic_dialog_email"
+                        android:layout_marginEnd="16dp"
+                        app:tint="@color/black" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Talk Therapy"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Psychologists and some other providers specialize in therapy"
+                            android:textColor="@color/gray_text"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardQ1Opt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_option_card"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/ic_menu_agenda"
+                        app:tint="@color/black"
+                        android:layout_marginEnd="16dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medication Management"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Psychiatrists often specialize in medication management"
+                            android:textColor="@color/gray_text"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardQ1Opt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_option_card"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/ic_dialog_info"
+                        app:tint="@color/black"
+                        android:layout_marginEnd="16dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Not sure yet"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="We can help you figure it out based on your needs"
+                            android:textColor="@color/gray_text"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Question 2 (Simplified for prototype, similar structure) -->
+         <ScrollView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you want the appointment video or in person?"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_marginBottom="32dp"/>
+
+                 <LinearLayout
+                    android:id="@+id/cardQ2Opt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_option_card"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                         android:layout_height="40dp"
+                        android:src="@android:drawable/ic_menu_camera"
+                        app:tint="@color/black"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Video Visit"
+                         android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+                
+                 <LinearLayout
+                     android:id="@+id/cardQ2Opt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_option_card"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                         android:layout_height="40dp"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="@color/black"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="In Person"
+                         android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Result Screen -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Based on your answers, here's your customized search"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/textColorPrimary"
+                android:layout_marginBottom="40dp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/black"
+                android:layout_marginBottom="40dp"/>
+            
+            <LinearLayout
+                android:id="@+id/layoutResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone"> <!-- Hidden initially -->
+                
+                <TextView
+                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✓ Psychologists"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+                <TextView
+                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✓ Anxiety"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+                <TextView
+                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✓ Talk Therapy"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ViewFlipper>
+
+    <!-- Navigation Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <!-- Only show on Quesion screens -->
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+            
+        <!-- Only show on Result screen -->
+         <Button
+            android:id="@+id/btnSeeResults"
+            android:layout_width="match_parent"
+             android:layout_height="60dp"
+            android:text="See your results"
+             android:textColor="@color/white"
+             android:backgroundTint="@color/black"
+             android:textAllCaps="false"
+             android:textSize="18sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</LinearLayout>

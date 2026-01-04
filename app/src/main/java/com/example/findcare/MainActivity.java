@@ -1,24 +1,32 @@
 package com.example.findcare;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import com.example.findcare.activities.LoginActivity;
+import com.example.findcare.activities.OnboardingActivity;
+import com.example.findcare.utils.SessionManager;
+import com.example.findcare.utils.DataSeeder;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Seed database
+        DataSeeder.seedDoctors(this);
+
+        SessionManager session = new SessionManager(this);
+        if (session.isLoggedIn()) {
+            if (session.isOnboardingCompleted()) {
+                startActivity(new Intent(this, com.example.findcare.activities.HomeActivity.class));
+            } else {
+                startActivity(new Intent(this, OnboardingActivity.class));
+            }
+        } else {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+        finish();
     }
 }
